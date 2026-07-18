@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh‑CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #222;
+            font-family: "Microsoft Yahei",sans‑serif;
+            line-height: 1.7;
+            padding:30px 15px;
+            transition: 0.4s;
+        }
+        /* 黑 */
+        body.dark{
+            background-color:#1f2430;
+            color:#eee;
+        }
+        .card{
+            max-width:700px;
+            margin:0 auto;
+            background:#fff;
+            padding:40px;
+            border-radius:18px;
+            box-shadow:0 4px 20px #00000018;
+            transition:0.4s;
+        }
+        .dark .card{
+            background:#2c313f;
+        }
+        .avatar{
+            width:140px;
+            height:140px;
+            border-radius:50%;
+            object-fit:cover;
+            display:block;
+            margin:0 auto 20px;
+            border:4px solid #4096ff;
+        }
+        h1{
+            text-align:center;
+            font-size:28px;
+            margin-bottom:6px;
+        }
+        .major{
+            text-align:center;
+            color:#666;
+            margin-bottom:30px;
+        }
+        .dark .major{
+            color:#bbbbbb;
+        }
+        section{
+            margin:26px 0;
+        }
+        h2{
+            font-size:20px;
+            border-left:5px solid #4096ff;
+            padding-left:12px;
+            margin-bottom:12px;
+        }
+        ul{
+            padding-left:24px;
+        }
+        li{
+            margin:8px 0;
+        }
+        .contact{
+            background-color:#ecf4ff;
+            padding:16px;
+            border-radius:12px;
+        }
+        .dark .contact{
+            background:#383f50;
+        }
+        #modeBtn{
+            display:block;
+            margin:25px auto 0;
+            padding:10px 24px;
+            border:none;
+            background:#4096ff;
+            color:white;
+            border-radius:30px;
+            font-size:16px;
+            cursor:pointer;
+        }
+        #modeBtn:hover{
+            background:#2b7cdb;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        < img class="avatar" src="https://picsum.photos/id/1005/200/200" alt="头像">
+        <h1>pg5</h1>
+        <div class="major">软件工程</div>
+
+        <section>
+            <h2>👤个人简介</h2>
+            <p>一名在持续努力的大一学生，希望能不断进步，提升自己的专业能力。</p >
+        </section>
+
+        <section>
+            <h2>💻技能列表</h2>
+            <ul>
+                <li>JavaScript 基础编程</li>
+                <li>VS Code开发工具使用</li>
+                <li>Git代码版本管理</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📅学习计划</h2>
+            <ul>
+                <li>第1周：夯实JavaScript基础，完成静态个人主页</li>
+                <li>第2‑3周：学习Vue3框架，练习组件开发</li>
+                <li>第4‑6周：实战开发完整前端项目</li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>📞联系方式</h2>
+            <p>邮箱：2039830597@qq.com</p >
+            <p>GitHub：github.com/pg5-555</p >
+        </section>
+
+        <button id="modeBtn">切换暗黑模式</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById("modeBtn");
+        const body = document.body;
+        btn.onclick = function(){
+            body.classList.toggle("dark");
+            if(body.classList.contains("dark")){
+                btn.innerText = "切换浅色模式";
+            }else{
+                btn.innerText = "切换暗黑模式";
+            }
+        }
+    </script>
+</body>
+</html>
